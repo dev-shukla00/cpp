@@ -1,2 +1,1 @@
-# C-
-DSA with C++
+# C++ with DSA
