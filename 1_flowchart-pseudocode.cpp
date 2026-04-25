@@ -1,0 +1,3 @@
+// Homework Qeustions-
+
+//simple interest.
