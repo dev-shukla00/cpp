@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    cout << "wow cosmos" << endl;
+int main() {
+    
     return 0;
 }
