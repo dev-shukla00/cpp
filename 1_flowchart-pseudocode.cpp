@@ -51,16 +51,65 @@ int main()
 
      // Is number odd or even!
 
-     int odd_even_num;
-     cout << "Enter a number: ";
-     cin >> odd_even_num;
+     // int odd_even_num;
+     // cout << "Enter a number: ";
+     // cin >> odd_even_num;
 
-     if (odd_even_num % 2 == 0) {
-          cout << "Even Number!" << endl;
-     } else if (odd_even_num % 2 == 1) {
-          cout << "Odd Number!" << endl;
-     } else {
-          cout << "Try again with a number!" << endl;
+     // if (odd_even_num % 2 == 0)
+     // {
+     //      cout << "Even Number!" << endl;
+     // }
+     // else if (odd_even_num % 2 == 1)
+     // {
+     //      cout << "Odd Number!" << endl;
+     // }
+     // else
+     // {
+     //      cout << "Try again with a number!" << endl;
+     // }
+
+     // Sum of numbers from 1 to n
+
+     // int n_inp;
+     // int count = 1;
+     // int sum = 0;
+
+     // cout << "Enter a number: ";
+     // cin >> n_inp;
+
+     // while (count <= n_inp)
+     // {
+     //      cout << count << " + ";
+     //      sum += count;
+     //      count++;
+     // }
+     // cout << " : " << sum << endl;
+
+     // Is prime number or not
+
+     int varPrime;
+     bool is_prime = true;
+     cout << "Enter a number: ";
+     cin >> varPrime;
+
+     for (size_t i = 2; i * i <= varPrime; i++)
+     // or we can also do this same this like below this, but above method is better fundamentaly.
+     //  for (size_t i = 2; i <= varPrime-1; i++)
+     {
+          if (varPrime % i == 0)
+          {
+               is_prime = false;
+               break;
+          }
+     }
+
+     if (is_prime == true)
+     {
+          cout << "Prime Number" << endl;
+     }
+     else
+     {
+          cout << "Non-prime Number" << endl;
      }
 
      //-Homework Questions-
