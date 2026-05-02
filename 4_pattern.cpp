@@ -240,17 +240,6 @@ int main()
         {
             // Pyramid pattern
             {
-                /*
-                n= 4;
-
-                space loop= n-i+1
-
-
-                num1 loop= i+1
-
-                num2 loop=
-
-                */
                 int n = 4;
                 int num2 = 1;
 
@@ -280,6 +269,62 @@ int main()
                     cout << endl;
                 }
                 cout << endl;
+            }
+        }
+        {
+            // Hollow diamond pattern
+            {
+                int n = 4;
+
+                // upper loop
+                for (int i = 0; i < n; i++)
+                {
+                    // inner loop for upper left initial spaces
+                    for (int j = 0; j < n - 1 - i; j++)
+                    {
+                        cout << " ";
+                    }
+
+                    // condition statement and innner loop for upper right
+                    if (i != 0)
+                    {
+                        cout << "*";
+
+                        for (int j = 0; j < 2 * i - 1; j++)
+                        {
+                            cout << " ";
+                        }
+                    }
+
+                    cout << "*";
+                    cout << endl;
+                }
+
+                // Lower loop
+                {
+                    for (int i = 0; i < n - 1; i++)
+                    {
+                        // initial spaces
+                        for (int j = 0; j < i + 1; j++)
+                        {
+                            cout << " ";
+                        }
+                        // initial stars
+                        cout << "*";
+
+                        // lateral stars
+                        if (i != n - 2)
+                        {
+                            for (int j = 0; j < 2 * (n - i) - 5; j++)
+                            {
+                                cout << " ";
+                            }
+                            cout << "*";
+                        }
+
+                        cout << endl;
+                    }
+                }
             }
         }
     }
