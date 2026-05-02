@@ -4,64 +4,283 @@ using namespace std;
 
 int main()
 {
-    {
-        // printing things m time in row and coloumn.
-        int m = 4;
-
-        for (int i = 1; i <= m; i++)
+    { // Sqaure pattern questions
         {
-            for (int j = 1; j <= m; j++)
+            // square pattern: printing star n time in row and coloumn.
+            int n = 4;
+
+            for (int i = 1; i <= n; i++)
             {
-                cout << "* ";
+                for (int j = 1; j <= n; j++)
+                {
+                    cout << "* ";
+                }
+                cout << endl;
             }
             cout << endl;
         }
-        cout << endl;
-    }
 
-    {
-        // printing things the number of time it itterate.
-        int n = 5;
-
-        for (int i = 1; i <= n; i++)
         {
-            for (int j = 1; j <= i; j++)
+            // square pattern: from A to n times in row and coloumn.
+            int n = 5;
+
+            for (int i = 0; i < n; i++)
             {
-                cout << "* ";
+                char ch = 'A';
+                for (int j = 0; j < n; j++)
+                {
+                    cout << ch << " ";
+                    ch += 1; // it will increase +1 in a character because in reality it's passed in ASCII, so the +1 is really happening in ascii digit, for A it's 65.
+                }
+                cout << endl;
             }
             cout << endl;
         }
-        cout << endl;
+        {
+            // square pattern: printing number in continuous manner irrespective of column and row.
+            int n = 5;
+            int num = 1;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    cout << num << " ";
+                    num++;
+                }
+                cout << endl;
+            }
+            cout << endl;
+        }
+        {
+            // square pattern: printing character in continuous manner irrespective of column and row.
+            int n = 5;
+            char num = 'A';
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    cout << num << " ";
+                    num++;
+                }
+                cout << endl;
+            }
+            cout << endl;
+        }
     }
 
-    {
-        // printing characters from A to Z
-        int o = 26;
-
-        for (int i = 0; i < o; i++)
+    { // Triangle pattern
         {
+            // right angle triangle pattern
+            int n = 5;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < i + 1; j++)
+                {
+                    cout << "* ";
+                }
+                cout << endl;
+            }
+            cout << endl;
+        }
+        {
+            // right angle triangle pattern with number
+            int n = 5;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < i + 1; j++)
+                {
+                    cout << i + 1;
+                }
+                cout << endl;
+            }
+            cout << endl;
+        }
+        {
+            // right angle triangle pattern with character
+            int n = 5;
             char ch = 'A';
-            for (int j = 0; j < o; j++)
+
+            for (int i = 0; i < n; i++)
             {
-                cout << ch;
-                ch += 1; // it will increase +1 in a character because in reality it's passed in ASCII, so the +1 is really happening in ascii digit, for A it's 65.
+                for (int j = 0; j < i + 1; j++)
+                {
+                    cout << ch;
+                }
+                ch++;
+                cout << endl;
             }
             cout << endl;
         }
-        cout << endl;
-    }
-
-    {
-        //
-        int p = 5;
-
-        for (int i = 0; i < p; i++)
         {
-            for (int j = p; j > 0; j--)
             {
-                cout << "* ";
+                // right angle triangle pattern with number but in increasing manner in row and not in column.
+                int n = 5;
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 1; j <= i + 1; j++)
+                    {
+                        cout << j;
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            }
+            {
+                // or we can also do it like this. (this was my own logic and preivous one was apna college logic)
+                int n = 5;
+
+                for (int i = 0; i < n; i++)
+                {
+                    int num = 0;
+                    for (int j = 0; j < i + 1; j++)
+                    {
+                        cout << num + 1;
+                        num++;
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            }
+        }
+        {
+            // Reverse triangle loop
+            int n = 5;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i + 1; j > 0; j--)
+                {
+                    cout << j;
+                }
+                cout << endl;
             }
             cout << endl;
+        }
+        {
+            // Floyd's triangle pattern
+            {
+                // Floyd's traingle with numbers
+                int n = 4;
+                int num = 1;
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j <= i; j++)
+                    {
+                        cout << num << " ";
+                        num++;
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            }
+            {
+                // Floyd's triangle with characters
+                int n = 4;
+                char ch = 'A';
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j <= i; j++)
+                    {
+                        cout << ch << " ";
+                        ch++;
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            }
+        }
+        {
+            {
+                // Inverted spaced right angle triangle with numbers
+                int n = 4;
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        cout << " ";
+                    }
+
+                    for (int j = 0; j < n - i; j++)
+                    {
+                        cout << i + 1;
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            }
+            {
+                // Inverted spaced right angle triangle with characters
+                int n = 4;
+                char ch = 'A';
+
+                for (int i = 0; i < n; i++)
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        cout << " ";
+                    }
+                    for (int j = 0; j < n - i; j++)
+                    {
+                        cout << ch;
+                    }
+                    ch++;
+                    cout << endl;
+                }
+                cout << endl;
+            }
+        }
+        {
+            // Pyramid pattern
+            {
+                /*
+                n= 4;
+
+                space loop= n-i+1
+
+
+                num1 loop= i+1
+
+                num2 loop=
+
+                */
+                int n = 4;
+                int num2 = 1;
+
+                for (int i = 0; i < n; i++)
+                {
+                    // spaces
+                    for (int j = 0; j < (n - 1 - i); j++)
+                    {
+                        cout << " ";
+                    }
+
+                    // num1
+                    int num1 = 1;
+                    for (int j = 0; j < i + 1; j++)
+                    {
+                        cout << num1;
+                        num1++;
+                    }
+
+                    // num2
+                    for (int j = 0; j < i; j++)
+                    {
+                        cout << num2;
+                        num2++;
+                    }
+
+                    cout << endl;
+                }
+                cout << endl;
+            }
         }
     }
     return 0;
