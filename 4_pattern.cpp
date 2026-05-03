@@ -237,33 +237,90 @@ int main()
                 cout << endl;
             }
         }
+    }
+    {
+        // Pyramid pattern
         {
-            // Pyramid pattern
-            {
-                int n = 4;
-                int num2 = 1;
+            int n = 4;
+            int num2 = 1;
 
-                for (int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
+            {
+                // spaces
+                for (int j = 0; j < (n - 1 - i); j++)
                 {
-                    // spaces
-                    for (int j = 0; j < (n - 1 - i); j++)
+                    cout << " ";
+                }
+
+                // num1
+                int num1 = 1;
+                for (int j = 0; j < i + 1; j++)
+                {
+                    cout << num1;
+                    num1++;
+                }
+
+                // num2
+                for (int j = 0; j < i; j++)
+                {
+                    cout << num2;
+                    num2++;
+                }
+
+                cout << endl;
+            }
+            cout << endl;
+        }
+    }
+    {
+        // Hollow diamond pattern
+        {
+            int n = 4;
+
+            // upper loop
+            for (int i = 0; i < n; i++)
+            {
+                // inner loop for upper left initial spaces
+                for (int j = 0; j < n - 1 - i; j++)
+                {
+                    cout << " ";
+                }
+
+                // condition statement and innner loop for upper right
+                if (i != 0)
+                {
+                    cout << "*";
+
+                    for (int j = 0; j < 2 * i - 1; j++)
                     {
                         cout << " ";
                     }
+                }
 
-                    // num1
-                    int num1 = 1;
+                cout << "*";
+                cout << endl;
+            }
+
+            // Lower loop
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    // initial spaces
                     for (int j = 0; j < i + 1; j++)
                     {
-                        cout << num1;
-                        num1++;
+                        cout << " ";
                     }
+                    // initial stars
+                    cout << "*";
 
-                    // num2
-                    for (int j = 0; j < i; j++)
+                    // lateral stars
+                    if (i != n - 2)
                     {
-                        cout << num2;
-                        num2++;
+                        for (int j = 0; j < 2 * (n - i) - 5; j++)
+                        {
+                            cout << " ";
+                        }
+                        cout << "*";
                     }
 
                     cout << endl;
@@ -271,62 +328,59 @@ int main()
                 cout << endl;
             }
         }
+    }
+    {
+        // Butterfly pattern
+
+        int n = 4;
+
+        // upper patterns
+        for (int i = 0; i < n; i++)
         {
-            // Hollow diamond pattern
+            // upper initial stars
+            for (int j = 0; j < i + 1; j++)
             {
-                int n = 4;
-
-                // upper loop
-                for (int i = 0; i < n; i++)
-                {
-                    // inner loop for upper left initial spaces
-                    for (int j = 0; j < n - 1 - i; j++)
-                    {
-                        cout << " ";
-                    }
-
-                    // condition statement and innner loop for upper right
-                    if (i != 0)
-                    {
-                        cout << "*";
-
-                        for (int j = 0; j < 2 * i - 1; j++)
-                        {
-                            cout << " ";
-                        }
-                    }
-
-                    cout << "*";
-                    cout << endl;
-                }
-
-                // Lower loop
-                {
-                    for (int i = 0; i < n - 1; i++)
-                    {
-                        // initial spaces
-                        for (int j = 0; j < i + 1; j++)
-                        {
-                            cout << " ";
-                        }
-                        // initial stars
-                        cout << "*";
-
-                        // lateral stars
-                        if (i != n - 2)
-                        {
-                            for (int j = 0; j < 2 * (n - i) - 5; j++)
-                            {
-                                cout << " ";
-                            }
-                            cout << "*";
-                        }
-
-                        cout << endl;
-                    }
-                }
+                cout << "*";
             }
+
+            // upper inside spaces
+            for (int j = 0; j < 2 * (n - 1 - i); j++)
+            {
+                cout << " ";
+            }
+
+            // upper end stars
+            for (int j = 0; j < i + 1; j++)
+            {
+                cout << "*";
+            }
+
+            cout << endl;
         }
+
+        // lower pattern
+        for (int i = 0; i < n; i++)
+        {
+            // lower initial stars
+            for (int j = 0; j < n - i; j++)
+            {
+                cout << "*";
+            }
+
+            // lower inner space
+            for (int j = 0; j < 2 * i; j++)
+            {
+                cout << " ";
+            }
+
+            // lower lateral stars
+            for (int j = 0; j < n - i; j++)
+            {
+                cout << "*";
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
     return 0;
 }
