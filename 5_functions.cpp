@@ -77,11 +77,57 @@ int sumOfDigits(int num)
     return sumDig;
 }
 
+bool isPrime(int n)
+{
+    if (n <= 1)
+    {
+        return false;
+    }
+
+    for (int i = 2; i < n; i++) // start from 2, not 0
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void printPrime(int n)
+{
+    int init = 2;
+
+    while (init <= n)
+    {
+        bool isPrime = true; // reset for each number
+
+        for (int i = 2; i < init; i++)
+        {
+            if (init % i == 0)
+            {
+                isPrime = false; // found divisor → not prime
+                break;
+            }
+        }
+
+        if (isPrime)
+        {
+            cout << init;
+
+            if (init < n)
+                cout << ", ";
+        }
+
+        init++;
+    }
+}
+
 int main()
 {
     { // learning function concepts
         // hello cosmos function
-        cosmos();
+        cout << cosmos() << endl;
 
         // printing min of two numbers
         cout << minOfTwo(7, 4) << endl;
@@ -100,6 +146,30 @@ int main()
         cout << "Give a number: ";
         cin >> n;
         cout << "Sum of Digits: " << sumOfDigits(n) << endl;
+    }
+
+    { // H.W qustions
+
+        // write a function to check if a number is prime or not.
+        int n;
+        cout << "Prime or not: ";
+        cin >> n;
+
+        if (isPrime(n))
+        {
+            cout << "Prime Number!" << endl;
+        }
+        else
+        {
+            cout << "Non-prime Number!" << endl;
+        }
+
+        // write a function to print all prime numbers from 1 to N.
+        int val;
+        cout << "Give a value to print all prime numbers upto that value: ";
+        cin >> val;
+
+        printPrime(val);
     }
 
     return 0;
