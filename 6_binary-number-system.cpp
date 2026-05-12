@@ -51,7 +51,7 @@ int main()
 {
     { // Decimal to Binary
         int decNum;
-        cout << "Enter a number: ";
+        cout << "Enter a decimal number: ";
         cin >> decNum;
 
         cout << decToBin(decNum) << endl;
